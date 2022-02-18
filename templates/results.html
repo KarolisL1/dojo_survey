@@ -11,10 +11,10 @@
 <body>
     <div class="container">
         <h2>Submitted form:</h2>
-        <h2>Name: {{ session['your_name'] }}</h2>
-        <p>Dojo Location: {{ session['location'] }}</p>
-        <p>Favorite Language: {{ session['language'] }}</p>
-        <p>Comment: {{ session['comment'] }}</p>
+        <h2>Name: {{ dojo['name'] }}</h2>
+        <p>Dojo Location: {{ dojo['location'] }}</p>
+        <p>Favorite Language: {{ dojo['language'] }}</p>
+        <p>Comment: {{ dojo['comment'] }}</p>
         <form>
             <input type="button" value="Go back" onclick="location.href = './'">
         </form>

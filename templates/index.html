@@ -12,7 +12,17 @@
 
 <body>
     <div class="container">
-        <form action="/process" method="post">
+        {% with messages = get_flashed_messages() %}
+        <!-- declare a variable called messages -->
+        {% if messages %}
+        <!-- check if there are any messages -->
+        {% for message in messages %}
+        <!-- loop through the messages -->
+        <p>{{message}}</p> <!-- display each message in a paragraph tag -->
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <form action="/create" method="post">
             <div class="d-flex flex-column">
                 <label for="your_name">Your name: </label>
                 <input type="text" name="your_name" id="your_name" class="form-control">
@@ -32,7 +42,7 @@
                 <option>Ruby</option>
             </select>
             <label for="comment">Comment: </label>
-            <textarea name="comment" id="comment" cols="30" rows="10" class="form-control"></textarea>
+            <textarea name="comment" id="comment" cols="20" rows="5" class="form-control"></textarea>
             <input type="submit" value="Submit" class="btn btn-primary">
         </form>
     </div>
